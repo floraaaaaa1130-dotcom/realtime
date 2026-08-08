@@ -339,15 +339,12 @@
             <span>20:00</span>
         </div>
 
-        <!-- 👇 여기부터 복사해서 붙여넣기 -->
         <div style="margin-top: 15px;">
             <button id="bgm-btn" style="background: #f2f3f5; border: none; padding: 6px 12px; border-radius: 15px; font-size: 12px; font-weight: 600; cursor: pointer; color: #555;">
                 🎵 BGM (터치 시 재생)
             </button>
-            <!-- 음악 파일 이름(또는 링크)을 src 안에 넣어주세요! -->
             <audio id="bgm" src="./music.mp3" loop></audio> 
         </div>
-        <!-- 👆 여기까지 -->
         
     </header>
 
@@ -695,7 +692,7 @@ let currentIndex = 0;
     const replyIndicator = document.getElementById('reply-indicator');
     const replyTargetName = document.getElementById('reply-target-name');
 
-    // 🌟 가상 시간 설정 (글 쓴 시간인 20:00:00 으로 세팅)
+    // 시간
     let virtualTime = new Date("2026-01-01T20:00:00"); 
 
     function getVirtualTimeStr() {
@@ -722,14 +719,14 @@ let currentIndex = 0;
         inputField.value = '';
     }
 
-    // 🌟 시간 표시를 삭제한 버전
+    // 댓글 시간 삭제
     function createComment(text, isReply, imageUrl = null, isMine = false, isSystem = false) {
         const isAtBottom = (window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 200);
 
         let nickname = `익명${anonNumber++}`;
         const badgeHtml = isMine ? `<span class="my-badge">나</span>` : '';
 
-        // 이미지가 있으면 태그 생성, 없으면 빈 칸
+        // 이미지
         const imageHtml = imageUrl ? `<img src="${imageUrl}" class="comment-image" alt="첨부이미지">` : '';
 
         if (!isReply) {
@@ -742,7 +739,6 @@ let currentIndex = 0;
                 <div class="comment-meta">
                     <div class="profile-pic"></div>
                     <div class="nickname">${nickname}${badgeHtml}</div>
-                    <!-- 시간 표시하던 div 삭제됨 -->
                 </div>
                 <div class="comment-text">${text}</div>
                 ${imageHtml}
@@ -769,7 +765,6 @@ let currentIndex = 0;
                 <div class="comment-meta">
                     <div class="profile-pic"></div>
                     <div class="nickname">${nickname}${badgeHtml}</div>
-                    <!-- 시간 표시하던 div 삭제됨 -->
                 </div>
                 <div class="comment-text">${text}</div>
                 ${imageHtml}
@@ -798,7 +793,7 @@ let currentIndex = 0;
         headerCommentCountEl.textContent = count;
     }
 
-    // 🌟 1. 구분선 생성 함수 추가
+    // 구분선 생성 함수
     function renderDivider(text) {
         const isAtBottom = (window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 200);
 
@@ -807,7 +802,6 @@ let currentIndex = 0;
         li.innerHTML = `<span class="divider-text">${text}</span>`;
         commentList.appendChild(li);
 
-        // 장면이 넘어갔으므로 이전 시스템 원댓글에 대댓글이 달리지 않도록 타겟 초기화
         lastSystemRepliesContainer = null;
 
         if (isAtBottom) {
@@ -815,7 +809,7 @@ let currentIndex = 0;
         }
     }
 
-    // 🌟 2. 기존 두 함수를 하나로 합친 스마트 타이머 (구분선 만나면 3초 멈춤)
+    // 구분선 만나면 3초 멈춤
     function processNextComment() {
         if (currentIndex >= commentData.length) {
             const statusEl = document.getElementById('live-status');
@@ -829,22 +823,18 @@ let currentIndex = 0;
         const data = commentData[currentIndex];
 
         if (data.isDivider) {
-            // [구분선일 경우]
             renderDivider(data.text || "··· 잠시 후 ···");
             currentIndex++;
-
-            // 가상 시간도 3초(3000ms) 추가
+            
             virtualTime.setMilliseconds(virtualTime.getMilliseconds() + 3000);
 
-            // 구분선 출력 후 다음 댓글까지 강제로 3초 동안 정적 대기
             setTimeout(processNextComment, 3000);
 
         } else {
-            // [일반 댓글일 경우]
+
             createComment(data.text, data.isReply, data.image, false, true);
             currentIndex++;
 
-            // 설정해두신 1초~3.5초 텀 그대로 유지!
             const minTime = 1000; 
             const maxTime = 3000; 
             const randomDelay = Math.floor(Math.random() * (maxTime - minTime + 1)) + minTime;
@@ -856,7 +846,6 @@ let currentIndex = 0;
         }
     }
 
-    // 🌟 3. 유저 댓글 등록
     function submitMyComment() {
         const text = inputField.value.trim();
         if (!text) return;
@@ -871,7 +860,7 @@ let currentIndex = 0;
         if (e.key === 'Enter') submitMyComment();
     });
 
-    // 👇 BGM 제어 코드 유지
+    // BGM
     const bgm = document.getElementById('bgm');
     const bgmBtn = document.getElementById('bgm-btn');
     let isBgmPlaying = false;
@@ -904,11 +893,10 @@ let currentIndex = 0;
             isBgmPlaying = true;
         }
     });
-    // 👆 BGM 제어 코드 끝
+    // 
 
-    // 🌟 4. 시작 설정 (window.onload 통합)
+    // 시작 설정
     window.onload = () => {
-        // 처음에 3개 띄우기
         for(let i=0; i<3; i++) {
             if (currentIndex < commentData.length) {
                 const data = commentData[currentIndex];
@@ -921,7 +909,6 @@ let currentIndex = 0;
                 currentIndex++;
             }
         }
-        // 자동 실행 시작!
         processNextComment();
     };
 

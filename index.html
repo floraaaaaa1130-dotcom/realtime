@@ -280,6 +280,34 @@
             display: block;
         }
 
+        /* 구분선 스타일 */
+        .divider {
+            text-align: center;
+            margin: 30px 0;
+            position: relative;
+            list-style: none;
+            animation: fadeIn 0.4s ease forwards;
+        }
+        .divider::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 20px;
+            right: 20px;
+            height: 1px;
+            background-color: #e2e2e2;
+            z-index: 1;
+        }
+        .divider-text {
+            background-color: #ffffff; 
+            padding: 0 16px;
+            color: #999;
+            font-size: 13px;
+            font-weight: bold;
+            position: relative;
+            z-index: 2;
+        }
+
         /* 애니메이션 */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
@@ -386,6 +414,7 @@
         { text: "먼훗날 숀준전설의무대.zip에 들어가기를", isReply: true },
         { text: "엔딩 포즈 헉헉대는 거 불닭엽떡마라샹궈보다 자극적임.....", isReply: false },
         { text: "이여준 땀 흘리면서 웃는 거 진짜 무대 즐기는 거 같아서 눈물 남ㅠㅠㅠㅠㅠㅠㅠㅠㅠ내새끼언제일케컷나", isReply: false },
+        { isDivider: true, text: "······" },
 { text: "애들 다 방전됐네 ㅋㅋㅋㅋ", isReply: false },
     { text: "유우시 거울로 누구 보는 거임?", isReply: false },
     { text: "이여준 보잖아", isReply: true },
@@ -466,6 +495,7 @@
     { text: "리액션이 ㅈㄴ 혜자라 피디도 계속 엮는 거임 ㅋㅋㅋ", isReply: true },
     { text: "크래쉬 팀 사랑해", isReply: false },
     { text: "데뷔조 걍 이대로 가자 ㅠㅠㅠ", isReply: true },
+    { isDivider: true, text: "······" },
     { text: "ㅅㅂ 투표 마감 5분 전", isReply: false },
     { text: "헛구역질 나옴", isReply: false },
     { text: "나 청심환먹음 구라안치고", isReply: false },
@@ -475,6 +505,7 @@
     { text: "갤벤으로 뒤집힐 코어가 아님", isReply: true },
     { text: "쩝 글킨해 ㅋ", isReply: true },
     { text: "투표 마감!!!!! 결과에 상관없이 다들 수고했음!!!!", isReply: false },
+    { isDivider: true, text: "······" },
     { text: "단체곡 낫밷인데?", isReply: false },
     { text: "되게 기준이 후하시다", isReply: true },
     { text: "뭔소리야 지금 에이티즈sbn 개빢쳐서 오셧잖아", isReply: true },
@@ -492,10 +523,12 @@
     { text: "준프 불안해 미치겟음 살려줘", isReply: false },
     { text: "왜 뭔가 해탈한 표정인데....... 포기하지말라고짜샤", isReply: false },
     { text: "야 너 인기 앙나많아 너두할수잇어데뷔 ㅅㅂ ㅠㅠ", isReply: true },
+    { isDivider: true, text: "······" },
     { text: "와 단이도 많이 올랏네 ㄷㄷ", isReply: false },
     { text: "ㅋㅋㅋㅋㅋㅋㅋㅋ 오열하다가 여준이가 밀어주니까 훌쩍이면서 올라가는 거 개커여움", isReply: false },
     { text: "진짜 형제 같어 ㅋㅋㅋㅋㅋ", isReply: false },
     { text: "단아 데뷔 축하해 ㅠㅠㅠㅠ", isReply: false },
+    { isDivider: true, text: "······" },
     { text: "오시온 3등!!!!!!!!!!!!!!!!!!!!!!!!", isReply: false },
     { text: "진짜 레전드 인간적으로 멋잇음;;", isReply: false },
     { text: "솔직히 뭘 해도 됐을 사람인 듯", isReply: true },
@@ -508,6 +541,7 @@
     { text: "독기시온 앞으로도 독기잇게 아좌좌!!!!!!", isReply: false },
     { text: "1, 2등 유우시 리쿠일 거고 7등 남았네", isReply: false },
     { text: "여준아 제발 ㅠㅠ", isReply: false },
+    { isDivider: true, text: "······" },
 { text: "아 미친이여준 8위", isReply: false },
     { text: "아", isReply: false },
     { text: "아ㅜ", isReply: false },
@@ -526,7 +560,8 @@
     { text: "오르빗 대박나자!!!!!!!!!!!", isReply: true },
     { text: "ㅊㅋㅊㅋㅊㅋ진짜 다들 수고 많았다 맘고생도", isReply: false },
     { text: "여기가 끝이 아니니까~~~~~", isReply: false },
-    { text: "ㅇㅇ이제 또 새로운 시작이지 다들 아직 젊다잉", isReply: true },
+    { text: "이제 또 새로운 시작이지 다들 아직 젊다잉", isReply: true },
+    { isDivider: true, text: "······" },
     { text: "이여준 소감 말할 때 단상 위 애들 걍 나라 잃은 표정이던데 ㅋㅋㅋㅋ ", isReply: false },
     { text: "아니 누가 보면 데뷔 취소 당한 줄", isReply: true },
     { text: "리쿠는 자기 소감할 때도 엄청 울더니 이여준 소감 때는 아예 고개 못 드네ㅠ", isReply: false },
@@ -537,7 +572,7 @@
     { text: "소리 들려달라고!!!!!!!!!!! 꽃가루 ㅈㄴ 뿌려대서 얼굴도 제대로 안 보이네", isReply: false },
     { text: "직캠 내놔 ㅠㅠㅠ", isReply: false },
     { text: "뒤에서 애들 껴안고 난리 났는데 이여준 혼자 한 발짝 떨어져서 멍하니 서 있는 거 맘아픔..", isReply: false },
-    { text: "아 리쿠 이여준한테 뛰어간다ㅜ", isReply: false },
+    { text: "리쿠 여준이한테 뛰어간다ㅜ", isReply: false },
     { text: "너네둘우정 여기서 끝내면 안 된다고 ...........", isReply: false },
     { text: "데뷔한 애가 탈락한 애 붙잡고 오열하는 게 존나 시트콤ㅋㅋㅋㅋㅋ쿠ㅜㅜㅜ시발안웃겨", isReply: false },
     { text: "사석에서라도 계속 만나 제발 ㅠㅠㅠㅠ", isReply: false },
@@ -545,6 +580,7 @@
     { text: "셀카 주기적으로 올려라 마리쿠", isReply: false },
     { text: "아 리쿠 너무 서럽게 울어서 이런 말하기 좀 그런데 너무귀엽다 앙 꺠물어주고시픔", isReply: false },
     { text: "ㅈㅉ불어터진햄햄이 너무 귀엽다", isReply: true },
+    { isDivider: true, text: "······" },
     { text: "유우시 뒤에서 인사하려고 기다리고 잇네 ㅋㅋㅋ", isReply: false },
     { text: "나 지금 유우시 기분이 상상조차 안됨 얼마나 슬플까 얼마나 같그룹 하고싶엇을까......", isReply: true },
     { text: "이여준 본인만큼(어쩌면그보다더..ㅋㅋ) 데뷔 간절햇을듯", isReply: true },
@@ -582,6 +618,7 @@
     { text: "나 왜케 슬프지 얘넨 어차피 계속 만날텐데", isReply: false },
     { text: "내 윳냥이가 와이리 순애야..", isReply: false },
     { text: "여러모로맘쥰나힘드네진짜", isReply: false },
+    { isDivider: true, text: "······" },
     { text: "에에에에에에엥???????", isReply: false },
     { text: "오시온 대체 무슨 결심을 한 거임", isReply: false },
     { text: "샤!!!!!갈!!!!!!!!내가 죽기전에 숀준 허그를 보다니", isReply: false },
@@ -597,6 +634,7 @@
     { text: "와", isReply: true },
     { text: "협박공", isReply: true },
     { text: "아 눈물 나는데 웃김 ㅠㅠㅠ", isReply: true },
+    { isDivider: true, text: "······" },
     { text: "그래서 이여준 이제 뭐함...? 다시 연습생으로 돌아가는 거임? 아니면 이 정도 화제성 끌었으니까 솔로 데뷔라도 시켜주려나? 근데 중소에다가 나이도 좀 있고 솔직히 솔로는 빡셀 거 같은데..", isReply: false },
     { text: "파생 나오길 존버해야지 뭐", isReply: true },
     { text: "이여준 데뷔할 때까지 멘헤라로 살 예정", isReply: false },
@@ -757,47 +795,70 @@ let currentIndex = 0;
         headerCommentCountEl.textContent = count;
     }
 
-    function loadNextSystemComment() {
-        if (currentIndex < commentData.length) {
-            const data = commentData[currentIndex];
-            // 이미지 데이터도 함께 넘겨주기
-            createComment(data.text, data.isReply, data.image, false, true);
-            currentIndex++;
-            
-            if (currentIndex >= commentData.length) {
-                const statusEl = document.getElementById('live-status');
-                statusEl.innerHTML = '업데이트 완료';
-                statusEl.style.color = '#888';
-            }
+    // 🌟 1. 구분선 생성 함수 추가
+    function renderDivider(text) {
+        const isAtBottom = (window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 200);
+
+        const li = document.createElement('li');
+        li.className = 'divider';
+        li.innerHTML = `<span class="divider-text">${text}</span>`;
+        commentList.appendChild(li);
+
+        // 장면이 넘어갔으므로 이전 시스템 원댓글에 대댓글이 달리지 않도록 타겟 초기화
+        lastSystemRepliesContainer = null;
+
+        if (isAtBottom) {
+            window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
         }
     }
 
-    // 🌟 댓글 텀 조절 및 가상 시간 흐름 함수
-    function scheduleNextComment() {
-        if (currentIndex < commentData.length) {
-            // 여기서 시간을 자유롭게 변경하세요! (1000 = 1초)
-            const minTime = 1000; // 최소 시간 1초
-            const maxTime = 3500; // 최대 시간 4초
-            
-            // 1~3초 사이의 랜덤 딜레이 생성
+    // 🌟 2. 기존 두 함수를 하나로 합친 스마트 타이머 (구분선 만나면 3초 멈춤)
+    function processNextComment() {
+        if (currentIndex >= commentData.length) {
+            const statusEl = document.getElementById('live-status');
+            if(statusEl) {
+                statusEl.innerHTML = '업데이트 완료';
+                statusEl.style.color = '#888';
+            }
+            return;
+        }
+
+        const data = commentData[currentIndex];
+
+        if (data.isDivider) {
+            // [구분선일 경우]
+            renderDivider(data.text || "··· 잠시 후 ···");
+            currentIndex++;
+
+            // 가상 시간도 3초(3000ms) 추가
+            virtualTime.setMilliseconds(virtualTime.getMilliseconds() + 3000);
+
+            // 구분선 출력 후 다음 댓글까지 강제로 3초 동안 정적 대기
+            setTimeout(processNextComment, 3000);
+
+        } else {
+            // [일반 댓글일 경우]
+            createComment(data.text, data.isReply, data.image, false, true);
+            currentIndex++;
+
+            // 설정해두신 1초~3.5초 텀 그대로 유지!
+            const minTime = 1000; 
+            const maxTime = 3500; 
             const randomDelay = Math.floor(Math.random() * (maxTime - minTime + 1)) + minTime;
-            
+
             setTimeout(() => {
-                // 댓글이 달리는 랜덤 텀만큼 가상 시간(20:00)에도 밀리초를 더해줍니다. 
                 virtualTime.setMilliseconds(virtualTime.getMilliseconds() + randomDelay);
-                
-                loadNextSystemComment();
-                scheduleNextComment(); 
+                processNextComment();
             }, randomDelay);
         }
     }
 
+    // 🌟 3. 유저 댓글 등록
     function submitMyComment() {
         const text = inputField.value.trim();
         if (!text) return;
 
         const isReply = userReplyTargetContainer !== null;
-        // 내가 쓰는 댓글은 이미지가 없으므로 imageUrl 자리에 null 전달
         createComment(text, isReply, null, true, false); 
         cancelReply();
     }
@@ -807,12 +868,11 @@ let currentIndex = 0;
         if (e.key === 'Enter') submitMyComment();
     });
 
-    // 👇 BGM 제어 코드 시작
+    // 👇 BGM 제어 코드 유지
     const bgm = document.getElementById('bgm');
     const bgmBtn = document.getElementById('bgm-btn');
     let isBgmPlaying = false;
 
-    // 첫 터치 시 자동 재생 시도 (꼼수)
     function autoPlayBgm() {
         if (!isBgmPlaying) {
             bgm.play().then(() => {
@@ -822,18 +882,15 @@ let currentIndex = 0;
                 console.log("자동 재생이 차단되었습니다.");
             });
         }
-        // 한 번 실행된 후에는 이 터치 이벤트를 없앱니다.
         document.body.removeEventListener('click', autoPlayBgm);
         document.body.removeEventListener('touchstart', autoPlayBgm);
     }
 
-    // 화면 어디든 터치하거나 클릭하면 노래 시작
     document.body.addEventListener('click', autoPlayBgm, { once: true });
     document.body.addEventListener('touchstart', autoPlayBgm, { once: true });
 
-    // 재생/정지 버튼 직접 클릭했을 때 동작
     bgmBtn.addEventListener('click', (e) => {
-        e.stopPropagation(); // 버튼 클릭 시 body 클릭 이벤트가 중복 실행되는 것 방지
+        e.stopPropagation(); 
         if (isBgmPlaying) {
             bgm.pause();
             bgmBtn.textContent = '🎵 BGM 켜기';
@@ -845,17 +902,24 @@ let currentIndex = 0;
         }
     });
     // 👆 BGM 제어 코드 끝
-    
+
+    // 🌟 4. 시작 설정 (window.onload 통합)
     window.onload = () => {
         // 처음에 3개 띄우기
         for(let i=0; i<3; i++) {
-            // 초기 3개는 딜레이 없이 나오므로 가상 시간에 임의로 1초씩 더해줌
-            virtualTime.setMilliseconds(virtualTime.getMilliseconds() + 1000);
-            loadNextSystemComment();
+            if (currentIndex < commentData.length) {
+                const data = commentData[currentIndex];
+                if (data.isDivider) {
+                    renderDivider(data.text);
+                } else {
+                    virtualTime.setMilliseconds(virtualTime.getMilliseconds() + 1000);
+                    createComment(data.text, data.isReply, data.image, false, true);
+                }
+                currentIndex++;
+            }
         }
-        
-        // 자동 실행 시작
-        scheduleNextComment();
+        // 자동 실행 시작!
+        processNextComment();
     };
 
 </script>

@@ -457,6 +457,7 @@
     { text: "오늘 무대 위에서 넘 행복해 보여서 나까지 행복해짐 여준아 넌 무조건 데뷔다", isReply: false },
     { text: "나 솔직히 내 식 아니라 관심없엇는데 오늘 보니까 확실히 무대 체질이긴 한듯", isReply: true },
     { text: "앞으로 기억에 남는 거 손에 꼽기 힘들 정도로 무대 많이 하자!!!!!!!", isReply: false },
+    { isDivider: true, text: "······" },
     { text: "ㅋㅋㅋ 제일 무서운 사람 만장일치 오시온 ㅋㅋㅋㅋㅋㅋ", isReply: false },
     { text: "아 개웃겨 질문 끝나기도 전에 다 오시온 가리키고 잇네", isReply: false },
     { text: "당연한 결과", isReply: false },
@@ -660,6 +661,7 @@
     { text: "ㄹㅇ ㅋㅋㅋㅋ 멤들보다 이여준이랑 더 자주 밥 먹을 듯", isReply: true },
     { text: "이여준 온리유프들한테 견제당할듯", isReply: true },
     { text: "온리유-죽어도못보내", isReply: true },
+    { isDivider: true, text: "······" },
     { text: "얘들아 너네도 투표하느라 고생 많았다~~~~", isReply: false },
     { text: "진짜 우리도 순애긴 해", isReply: true },
     { text: "제발 두 번 다시는 서바판에서 보지 말자! ㅎㅎ", isReply: true },
@@ -818,7 +820,7 @@ let currentIndex = 0;
         if (currentIndex >= commentData.length) {
             const statusEl = document.getElementById('live-status');
             if(statusEl) {
-                statusEl.innerHTML = '업데이트 완료';
+                statusEl.innerHTML = 'Off Air';
                 statusEl.style.color = '#888';
             }
             return;
